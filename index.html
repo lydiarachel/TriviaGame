@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia Game</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <!-- CSS style sheet -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <img src="./assets/images/TriviaGameHeader.png" alt="Trivia Game Header">
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!--Start button that will be hidden when pressed-->
+                <button type="button" class="btn btn-primary" id="startButton">Start</button>
+  
+                <!--questions that will be displayed when start button pressed-->
+            <div id="startOfGame">
+                <br>
+                <p class="question">1. The original ThunderCats show was animated in which country?</p>
+                <br>
+                <form class="answers">
+                        <input type="radio" name="answer" value="japan">Japan<br>
+                        <input type="radio" name="answer" value="US">The United States<br>
+                        <input type="radio" name="answer" value="france">France<br>
+                        <input type="radio" name="answer" value="australia">Australia<br>
+                        <br>
+                        <input type="submit" value="Submit" class="btn btn-primary submit">
+                        
+                </form>
+            </div>
+                <!--Results Page to be displayed once submit button is pressed-->
+            <div id="resultsDisplay">
+                <H1>ThunderCats Ho!</h1>
+                <div id="correct">Correct: </div>
+                <div id="incorrect">Incorrect: </div>
+                <div id="unanswered">Unanswered: </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Script -->
+    <script type="text/javascript" src="./assets/javascript/app.js"></script>
+</body>
+
+</html>
