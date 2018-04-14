@@ -86,8 +86,8 @@ $(".submit").on("click", function () {
     $("#resultsDisplay").show();
 
     //displaying the results
-    $("#correct").text("Correct Answers :" + correctAnswer);
-    $("#incorrect").text("Wrong Answers :" + wrongAnswer);
+    $("#correct").text("Correct Answers : " + correctAnswer);
+    $("#incorrect").text("Wrong Answers : " + wrongAnswer);
     $("#unanswered").text("Unanswered : " + notAnswered);
 
 });
