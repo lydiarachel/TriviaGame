@@ -1,92 +1,93 @@
+//Global variables
+//Timer count variable
+var countDown = 60;
+
+// //audio to play when the start button is pressed
+var audio = new Audio("./assets/audio/ThundercatsSong.mp3")
+
+//variables for number of correct, incorrect, unanswered
+var correctAnswer = 0;
+var wrongAnswer = 0;
+var notAnswered = 0;
+
 $(document).ready(function () {
 
-    // $("input[type='submit']").click(function (event) {
-    //     if ($("input[type='radio']").is(':checked')) {
-    //         console.log($("input[type='radio']:checked").val());
-    //     }
-    //     event.preventDefault();
-    // });
-    // //audio to play when the start button is pressed
-    var audio = new Audio("./assets/audio/ThundercatsSong.mp3")
-   
-    window.onload = function() {
-        $("#startOfGame").hide();
-        $("#resultsDisplay").hide();
-        $("#startButton").show();
-    }
+    //start of game hide questions and results
+    $("#startOfGame").hide();
+    $("#resultsDisplay").hide();
 
-
-    $("#startButton").click(function () {
-        $("#startButton").on("click", startGame);
+    //start button function to show the trivia game on click and hide the start button
+    $("#startButton").on("click", function () {
         $("#startButton").hide();
-        $("#resultsDisplay").hide();
-        $("#startOfGame").show();
-        audio.play();
-    })
-    // audio.play();
 
-    function startGame() {
-        // counter = setInterval(timerStart, 120000);
         $("#startOfGame").show();
+        // audio.play();
+        timerCountDown();
+        userSelections();
+        return;
+    })
+
+    //timer display
+    function timer() {
+        //decrements the timer from 60 seconds
+        countDown--;
+
+        //diplays the actual time left in seconds
+        $("#actualTimeLeft").text(countDown + " seconds");
+
+        //if the user gets all of the answers before time is up
+
+        //if the timer runs out
+        if (countDown == 0) {
+
+            //function to be called once the time is up and it's time to get the answers
+            roundUpTime();
+
+        }
+
     }
 
-    // function endGame(){
+    //function for the timer interval as one second
+    function timerCountDown() {
+        setInterval(timer, 1000);
+    }
 
-    // }
+    function roundUpTime() {
+        //when rounduptime function called, hide the questions and display the results
+        $("#startOfGame").hide();
+        $("#resultsDisplay").show();
+    }
 
+    function userSelections() {
+        // select the radio by its id
+        $(".answers").on("change", function () { // bind a function to the change event
+            if ($("input[type='radio'].numOne").is(":checked")) {
+                // check if the radio is checked
+                var val = $("input[type='radio'].numOne:checked").val(); // retrieve the value
+            }
+            console.log(val);
+            var answer = $("#rightAnswer").val();
+            console.log(answer);
+            if (val == undefined) {
+                notAnswered++;
+            } else if (val == answer) {
+                correctAnswer++;
+            } else {
+                wrongAnswer++;
+            }
+            console.log(correctAnswer);
+        })
 
+    }
+})
 
+$(".submit").on("click", function () {
+    $("#startOfGame").hide();
+    $("#resultsDisplay").show();
 
-    startGame();
-
+    //displaying the results
+    $("#correct").text("Correct Answers :" + correctAnswer);
+    $("#incorrect").text("Wrong Answers :" + wrongAnswer);
+    $("#unanswered").text("Unanswered : " + notAnswered);
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//variable object array that holds properties for trivia questions
-// var questions = [{
-//     triviaQuestion: "The original ThunderCats show was animated in:",
-//     answersToSelect: ["Japan", "The United States", "France", "India"],
-//     correctAnswerIndex: 0
-// }]; 
-
-// $("#startButton").on("click", function(){
-//     $(this).hide();
-//     startGame();
-// })
-
-// function startGame(){
-//     $("#results").empty();
-//     $("#correct").empty();
-//     $("#incorrect").empty();
-//     $("#unanswered").empty();
-// }
-
-// function questionList(){
-
-// }

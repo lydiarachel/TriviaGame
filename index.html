@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta class="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trivia Game</title>
     <!-- Latest compiled and minified CSS -->
@@ -24,29 +24,36 @@
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <!--Start button that will be hidden when pressed-->
                 <button type="button" class="btn btn-primary" id="startButton">Start</button>
-  
+
                 <!--questions that will be displayed when start button pressed-->
-            <div id="startOfGame">
-                <br>
-                <p class="question">1. The original ThunderCats show was animated in which country?</p>
-                <br>
-                <form class="answers">
-                        <input type="radio" name="answer" value="japan">Japan<br>
-                        <input type="radio" name="answer" value="US">The United States<br>
-                        <input type="radio" name="answer" value="france">France<br>
-                        <input type="radio" name="answer" value="australia">Australia<br>
+                <div id="startOfGame">
+                    <h1 id="countdownClock">Time Remaining:
+                        <span id="actualTimeLeft">60 Seconds</span>
+                    </h1>
+                    <p class="question">1. The original ThunderCats show was animated in which country?</p>
+                    <br>
+                    <form class="answers">
+                        <input type="radio" class="numOne" value="Japan" id="rightAnswer">Japan
                         <br>
-                        <input type="submit" value="Submit" class="btn btn-primary submit">
-                        
-                </form>
-            </div>
+                        <input type="radio" class="numOne" value="US">The United States
+                        <br>
+                        <input type="radio" class="numOne" value="France">France
+                        <br>
+                        <input type="radio" class="numOne" value="Australia">Australia
+                        <br>
+                        <br>
+                        <button type="button" value="Submit" class="btn btn-primary submit">Submit</button>
+
+                    </form>
+                </div>
+
                 <!--Results Page to be displayed once submit button is pressed-->
-            <div id="resultsDisplay">
-                <H1>ThunderCats Ho!</h1>
-                <div id="correct">Correct: </div>
-                <div id="incorrect">Incorrect: </div>
-                <div id="unanswered">Unanswered: </div>
-            </div>
+                <div id="resultsDisplay">
+                    <H1>ThunderCats Ho!</h1>
+                    <div id="correct"> </div>
+                    <div id="incorrect"></div>
+                    <div id="unanswered"></div>
+                </div>
             </div>
         </div>
     </div>
