@@ -4,6 +4,7 @@ body{
     background-position: center;
     background-attachment: fixed;
     color: white;
+    background-size:cover;
 }
 
 img {
@@ -20,12 +21,13 @@ h1 {
 #startButton, #endButton {
     width: 40%;
     font-size: 30px;
-    background-color: black;
+    background-color: white;
+    color: black;
 }
 
 #startButton {
     margin-left: 30%;
-    margin-top: 20%;
+    margin-top: 10%;
 }
 
 #endButton {

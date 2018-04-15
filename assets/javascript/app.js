@@ -21,7 +21,7 @@ $(document).ready(function () {
         $("#startButton").hide();
 
         $("#startOfGame").show();
-        // audio.play();
+        audio.play();
         timerCountDown();
         userSelections();
         return;
@@ -42,14 +42,17 @@ $(document).ready(function () {
 
             //function to be called once the time is up and it's time to get the answers
             roundUpTime();
-
+            //this stops the timer from going on for-ev-er (like in Sandlot tee hee he)
+            clearInterval(timerStop);
         }
 
     }
 
+    var timerStop;
     //function for the timer interval as one second
     function timerCountDown() {
-        setInterval(timer, 1000);
+        //setting a variable equal to the set interval time so that it can be stopped, instead of just hidden
+        timerStop = setInterval(timer, 1000);
     }
 
     function roundUpTime() {
@@ -60,7 +63,8 @@ $(document).ready(function () {
 
     function userSelections() {
         // select the radio by its id
-        $(".answers").on("change", function () { // bind a function to the change event
+        
+        $(".numOne").on("change", function () { // bind a function to the change event
             if ($("input[type='radio'].numOne").is(":checked")) {
                 // check if the radio is checked
                 var val = $("input[type='radio'].numOne:checked").val(); // retrieve the value
