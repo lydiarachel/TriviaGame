@@ -11,28 +11,27 @@ img {
     width: 100%;
     margin-bottom: 20px;
     border-bottom: 5px solid #D4AF37;
-   
 }
 
 h1 {
     text-align: center;
 }
 
-#startButton, #endButton {
+#start{
     width: 40%;
     font-size: 30px;
     background-color: white;
     color: black;
 }
 
-#startButton {
-    margin-left: 30%;
-    margin-top: 10%;
+.answer-button{
+    background-color:white;
+    color: black;
+    font-size: 30px;
+    margin-left: 50px;
+    margin-top: 20px;
 }
 
-#endButton {
-    margin-left: 30%;
-}
 p{
     font-size: 30px;
 }
@@ -41,7 +40,16 @@ p{
     font-size: 20px;
 }
 
-#correct, #incorrect, #unanswered {
-    font-size: 30px;
+#subwrapper{
+    text-align: center;
 }
+
+#reset{
+    background-color:white;
+    color: black;
+    font-size: 30px;
+    margin: 10px; 
+    padding: 10px;
+}
+
 
